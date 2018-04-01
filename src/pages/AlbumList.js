@@ -45,6 +45,7 @@ class AlbumList extends PureComponent {
   }
   static navigationOptions = {
     title: `Doodleblue Music`,
+
     headerStyle: { backgroundColor: COLOR_ACCENT },
   };
   renderItem = ({ item }) => {

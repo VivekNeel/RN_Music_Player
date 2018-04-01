@@ -1,16 +1,17 @@
 const Artists = [
   {
     name: 'Album One',
-    background: 'http://storage.googleapis.com/automotive-media/album_art.jpg',
+    background: 'https://storage.googleapis.com/automotive-media/album_art.jpg',
     songs: [
       {
         title: 'Jazz in Paris',
         album: 'Jazz & Blues',
         artist: 'Media Right Productions',
         genre: 'Jazz & Blues',
-        url: 'http://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3',
+        url:
+          'https://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 31,
         totalTrackCount: 6,
         duration: 103,
@@ -21,9 +22,10 @@ const Artists = [
         album: 'Jazz & Blues',
         artist: 'Silent Partner',
         genre: 'Jazz & Blues',
-        url: 'http://storage.googleapis.com/automotive-media/The_Messenger.mp3',
+        url:
+          'https://storage.googleapis.com/automotive-media/The_Messenger.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 22,
         totalTrackCount: 6,
         duration: 132,
@@ -34,9 +36,9 @@ const Artists = [
         album: 'Jazz & Blues',
         artist: 'Huma-Huma',
         genre: 'Jazz & Blues',
-        url: 'http://storage.googleapis.com/automotive-media/Talkies.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Talkies.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 33,
         totalTrackCount: 6,
         duration: 162,
@@ -47,9 +49,9 @@ const Artists = [
         album: 'Cinematic',
         artist: 'Jingle Punks',
         genre: 'Cinematic',
-        url: 'http://storage.googleapis.com/automotive-media/On_the_Bach.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/On_the_Bach.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 64,
         totalTrackCount: 6,
         duration: 66,
@@ -61,9 +63,9 @@ const Artists = [
         artist: 'Jingle Punks',
         genre: 'Cinematic',
         url:
-          'http://storage.googleapis.com/automotive-media/The_Story_Unfolds.mp3',
+          'https://storage.googleapis.com/automotive-media/The_Story_Unfolds.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 85,
         totalTrackCount: 6,
         duration: 91,
@@ -74,16 +76,17 @@ const Artists = [
   {
     name: 'Album Two',
     background:
-      'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+      'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
     songs: [
       {
         title: 'Drop and Roll',
         album: 'Youtube Audio Library Rock',
         artist: 'Silent Partner',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Drop_and_Roll.mp3',
+        url:
+          'https://storage.googleapis.com/automotive-media/Drop_and_Roll.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 6,
         totalTrackCount: 7,
         duration: 121,
@@ -94,9 +97,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Topher Mohr and Alex Elena',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Motocross.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Motocross.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 8,
         totalTrackCount: 7,
         duration: 182,
@@ -108,9 +111,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Wish_You_d_Come_True.mp3',
+          'https://storage.googleapis.com/automotive-media/Wish_You_d_Come_True.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 8,
         totalTrackCount: 7,
         duration: 169,
@@ -121,9 +124,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Silent Partner',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Awakening.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Awakening.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 9,
         totalTrackCount: 7,
         duration: 220,
@@ -134,9 +137,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Letter Box',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Home.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Home.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 10,
         totalTrackCount: 7,
         duration: 213,
@@ -148,9 +151,9 @@ const Artists = [
         artist: 'Letter Box',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Tell_The_Angels.mp3',
+          'https://storage.googleapis.com/automotive-media/Tell_The_Angels.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         trackNumber: 6,
         totalTrackCount: 7,
         duration: 208,
@@ -161,9 +164,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Letter Box',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Hey_Sailor.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Hey_Sailor.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 11,
         totalTrackCount: 7,
         duration: 193,
@@ -174,7 +177,7 @@ const Artists = [
   {
     name: 'Album Three',
     background:
-      'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+      'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
     songs: [
       {
         title: 'Keys To The Kingdom',
@@ -182,9 +185,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
+          'https://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 12,
         totalTrackCount: 2,
         duration: 221,
@@ -196,9 +199,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
+          'https://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 13,
         totalTrackCount: 2,
         duration: 160,
@@ -209,7 +212,7 @@ const Artists = [
   {
     name: 'Album Four',
     background:
-      'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+      'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
     songs: [
       {
         title: 'Keys To The Kingdom',
@@ -217,9 +220,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
+          'https://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 12,
         totalTrackCount: 2,
         duration: 221,
@@ -231,9 +234,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
+          'https://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 13,
         totalTrackCount: 2,
         duration: 160,
@@ -243,16 +246,17 @@ const Artists = [
   },
   {
     name: 'Album Five',
-    background: 'http://storage.googleapis.com/automotive-media/album_art.jpg',
+    background: 'https://storage.googleapis.com/automotive-media/album_art.jpg',
     songs: [
       {
         title: 'Jazz in Paris',
         album: 'Jazz & Blues',
         artist: 'Media Right Productions',
         genre: 'Jazz & Blues',
-        url: 'http://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3',
+        url:
+          'https://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 31,
         totalTrackCount: 6,
         duration: 103,
@@ -263,9 +267,10 @@ const Artists = [
         album: 'Jazz & Blues',
         artist: 'Silent Partner',
         genre: 'Jazz & Blues',
-        url: 'http://storage.googleapis.com/automotive-media/The_Messenger.mp3',
+        url:
+          'https://storage.googleapis.com/automotive-media/The_Messenger.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 22,
         totalTrackCount: 6,
         duration: 132,
@@ -276,9 +281,9 @@ const Artists = [
         album: 'Jazz & Blues',
         artist: 'Huma-Huma',
         genre: 'Jazz & Blues',
-        url: 'http://storage.googleapis.com/automotive-media/Talkies.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Talkies.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 33,
         totalTrackCount: 6,
         duration: 162,
@@ -289,9 +294,9 @@ const Artists = [
         album: 'Cinematic',
         artist: 'Jingle Punks',
         genre: 'Cinematic',
-        url: 'http://storage.googleapis.com/automotive-media/On_the_Bach.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/On_the_Bach.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 64,
         totalTrackCount: 6,
         duration: 66,
@@ -303,9 +308,9 @@ const Artists = [
         artist: 'Jingle Punks',
         genre: 'Cinematic',
         url:
-          'http://storage.googleapis.com/automotive-media/The_Story_Unfolds.mp3',
+          'https://storage.googleapis.com/automotive-media/The_Story_Unfolds.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art.jpg',
         id: 85,
         totalTrackCount: 6,
         duration: 91,
@@ -316,16 +321,17 @@ const Artists = [
   {
     name: 'Album Six',
     background:
-      'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+      'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
     songs: [
       {
         title: 'Drop and Roll',
         album: 'Youtube Audio Library Rock',
         artist: 'Silent Partner',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Drop_and_Roll.mp3',
+        url:
+          'https://storage.googleapis.com/automotive-media/Drop_and_Roll.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 6,
         totalTrackCount: 7,
         duration: 121,
@@ -336,9 +342,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Topher Mohr and Alex Elena',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Motocross.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Motocross.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 8,
         totalTrackCount: 7,
         duration: 182,
@@ -350,9 +356,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Wish_You_d_Come_True.mp3',
+          'https://storage.googleapis.com/automotive-media/Wish_You_d_Come_True.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 8,
         totalTrackCount: 7,
         duration: 169,
@@ -363,9 +369,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Silent Partner',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Awakening.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Awakening.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 9,
         totalTrackCount: 7,
         duration: 220,
@@ -376,9 +382,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Letter Box',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Home.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Home.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 10,
         totalTrackCount: 7,
         duration: 213,
@@ -390,9 +396,9 @@ const Artists = [
         artist: 'Letter Box',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Tell_The_Angels.mp3',
+          'https://storage.googleapis.com/automotive-media/Tell_The_Angels.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         trackNumber: 6,
         totalTrackCount: 7,
         duration: 208,
@@ -403,9 +409,9 @@ const Artists = [
         album: 'Youtube Audio Library Rock',
         artist: 'Letter Box',
         genre: 'Rock',
-        url: 'http://storage.googleapis.com/automotive-media/Hey_Sailor.mp3',
+        url: 'https://storage.googleapis.com/automotive-media/Hey_Sailor.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_2.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_2.jpg',
         id: 11,
         totalTrackCount: 7,
         duration: 193,
@@ -416,7 +422,7 @@ const Artists = [
   {
     name: 'Album Seven',
     background:
-      'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+      'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
     songs: [
       {
         title: 'Keys To The Kingdom',
@@ -424,9 +430,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
+          'https://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 12,
         totalTrackCount: 2,
         duration: 221,
@@ -438,9 +444,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
+          'https://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 13,
         totalTrackCount: 2,
         duration: 160,
@@ -451,7 +457,7 @@ const Artists = [
   {
     name: 'Album Three',
     background:
-      'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+      'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
     songs: [
       {
         title: 'Keys To The Kingdom',
@@ -459,9 +465,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
+          'https://storage.googleapis.com/automotive-media/Keys_To_The_Kingdom.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 12,
         totalTrackCount: 2,
         duration: 221,
@@ -473,9 +479,9 @@ const Artists = [
         artist: 'The 126ers',
         genre: 'Rock',
         url:
-          'http://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
+          'https://storage.googleapis.com/automotive-media/The_Coldest_Shoulder.mp3',
         albumImage:
-          'http://storage.googleapis.com/automotive-media/album_art_3.jpg',
+          'https://storage.googleapis.com/automotive-media/album_art_3.jpg',
         id: 13,
         totalTrackCount: 2,
         duration: 160,

@@ -91,7 +91,6 @@ class SingleSongDetail extends PureComponent {
           <Text style={styles.title}>{currentSong.title}</Text>
           <Text style={styles.artist}>{currentSong.artist}</Text>
         </View>
-        {/* <ProgressBar /> */}
         <View style={styles.controls}>
           <CustomButton
             source={iconPrevious}
@@ -105,7 +104,6 @@ class SingleSongDetail extends PureComponent {
                 : iconPause
             }
             onPress={this._playPause.bind(this)}
-            style={styles.playPause}
             imageStyle={styles.controlIcon}
           />
           <CustomButton
@@ -182,11 +180,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: 25,
+    margin: 25,
   },
   controlIcon: {
     width: 40,
     height: 40,
+    margin: 20,
   },
   playPause: {
     borderRadius: 50,

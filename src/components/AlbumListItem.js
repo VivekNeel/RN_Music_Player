@@ -4,7 +4,7 @@ import {
   FlatList,
   StyleSheet,
   Text,
-  Image,
+  ImageBackground,
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
@@ -12,10 +12,18 @@ import {
 const styles = StyleSheet.create({
   albumPoster: {
     height: 150,
-    opacity: 0.7,
     width: Dimensions.get('window').width / 2,
   },
 
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: '#212121',
+    opacity: 0.6,
+  },
   albumTitle: {
     position: 'absolute',
     fontSize: 20,
@@ -41,11 +49,13 @@ class AlbumListItem extends PureComponent {
         }}
       >
         <View>
-          <Image
+          <ImageBackground
             style={styles.albumPoster}
             resizeMethod={'auto'}
             source={{ uri: item.background }}
-          />
+          >
+            <View style={styles.overlay} />
+          </ImageBackground>
           <Text style={styles.albumTitle}>{item.name}</Text>
         </View>
       </TouchableOpacity>
