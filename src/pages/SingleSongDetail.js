@@ -15,7 +15,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import TrackPlayer from 'react-native-track-player';
-import ImageButton from '../components/ImageButton';
+import CustomButton from '../components/CustomButton';
 
 import iconArrow from '../images/arrow.png';
 import iconPlay from '../images/play.png';
@@ -23,7 +23,11 @@ import iconPause from '../images/pause.png';
 import iconPrevious from '../images/previous.png';
 import iconNext from '../images/next.png';
 
-import { playbackTrack, updatePlayback } from '../redux/actions/playerActions';
+import {
+  playbackTrack,
+  updatePlayback,
+  playbackState,
+} from '../redux/actions/playerActions';
 
 class SingleSongDetail extends PureComponent {
   static navigationOptions = {
@@ -34,51 +38,53 @@ class SingleSongDetail extends PureComponent {
   }
 
   _playPause() {
-    // if(this.props.state == TrackPlayer.STATE_PAUSED) {
-    //     TrackPlayer.play();
-    // } else {
-    //     TrackPlayer.pause();
-    // }
+    console.log('...state', this.props.state);
+
+    if (this.props.state == TrackPlayer.STATE_PAUSED) {
+      TrackPlayer.play();
+      this.props.updatePlayback();
+    } else {
+      TrackPlayer.pause();
+      this.props.updatePlayback();
+    }
   }
 
   async _previous() {
     TrackPlayer.skipToPrevious();
+    this.props.updatePlayback();
   }
 
-  _next(songId) {
+  _next() {
     TrackPlayer.skipToNext();
     this.props.updatePlayback();
   }
 
   constructor(props) {
     super(props);
-    this.state = { trackId: this.props.track };
     this._next = this._next.bind(this);
   }
   render() {
     const { songs, track } = this.props;
 
     const currentSong = songs.find(item => item.id == String(track));
-    console.log('currentsong', currentSong, this.props);
 
     if (!currentSong) {
       return null;
     }
     return (
       <View style={styles.view}>
-        <StatusBar translucent={true} backgroundColor="rgba(0, 0, 0, 0)" />
+        <StatusBar />
         <ImageBackground
-          source={{ uri: currentSong.artwork }}
+          source={{ uri: currentSong.albumImage }}
           resizeMode="cover"
           style={[styles.artwork, { height: 300 }]}
         >
           <View style={styles.header}>
-            <ImageButton
+            <CustomButton
               source={iconArrow}
               onPress={this._goBack.bind(this)}
               imageStyle={styles.headerIcon}
             />
-            <Text style={styles.headerTitle}>Now Playing</Text>
           </View>
         </ImageBackground>
         <View style={styles.info}>
@@ -87,12 +93,12 @@ class SingleSongDetail extends PureComponent {
         </View>
         {/* <ProgressBar /> */}
         <View style={styles.controls}>
-          <ImageButton
+          <CustomButton
             source={iconPrevious}
             onPress={this._previous.bind(this)}
             imageStyle={styles.controlIcon}
           />
-          <ImageButton
+          <CustomButton
             source={
               this.props.state == TrackPlayer.STATE_PAUSED
                 ? iconPlay
@@ -102,7 +108,7 @@ class SingleSongDetail extends PureComponent {
             style={styles.playPause}
             imageStyle={styles.controlIcon}
           />
-          <ImageButton
+          <CustomButton
             source={iconNext}
             onPress={this._next}
             imageStyle={styles.controlIcon}
@@ -115,10 +121,15 @@ class SingleSongDetail extends PureComponent {
 
 export default connect(
   state => ({
+    state: state.musicPlaybackReducer.state,
     track: state.musicPlaybackReducer.currentTrack,
     songs: state.musicPlaybackReducer.songs,
   }),
-  dispatch => bindActionCreators({ playbackTrack, updatePlayback }, dispatch)
+  dispatch =>
+    bindActionCreators(
+      { playbackTrack, updatePlayback, playbackState },
+      dispatch
+    )
 )(SingleSongDetail);
 
 const styles = StyleSheet.create({
@@ -127,7 +138,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#2b2b2b',
+    backgroundColor: '#212121',
   },
   artwork: {
     width: '100%',

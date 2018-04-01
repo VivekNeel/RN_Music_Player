@@ -16,7 +16,7 @@ import { loadSongs } from '../redux/actions/playerActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { playbackTrack } from '../redux/actions/playerActions';
+import { playbackTrack, updatePlayback } from '../redux/actions/playerActions';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
 class AlbumDetailView extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { currentTime: 0 };
     this.onSongPressed = this.onSongPressed.bind(this);
   }
 
@@ -45,14 +44,11 @@ class AlbumDetailView extends PureComponent {
       for (item of this.props.navigation.state.params.albumSongs) {
         track = {
           id: String(item.id),
-
           url: item.url,
-
           title: item.title,
           artist: item.album,
           album: item.album,
           genre: item.album,
-
           artwork: item.albumImage,
         };
         tracks.push(track);
@@ -67,9 +63,9 @@ class AlbumDetailView extends PureComponent {
 
   onSongPressed(currentSongID) {
     this.props.playbackTrack(currentSongID);
+    this.props.updatePlayback();
   }
   static navigationOptions = {
-    title: '',
     header: null,
   };
   renderSong = ({ item }) => {
@@ -116,5 +112,6 @@ export default connect(
     currentTrack: state.musicPlaybackReducer.currentTrack,
     songs: state.musicPlaybackReducer.songs,
   }),
-  dispatch => bindActionCreators({ playbackTrack, loadSongs }, dispatch)
+  dispatch =>
+    bindActionCreators({ playbackTrack, loadSongs, updatePlayback }, dispatch)
 )(AlbumDetailView);
