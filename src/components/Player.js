@@ -8,16 +8,9 @@ import TrackPlayer, { ProgressComponent } from 'react-native-track-player';
 import iconPlay from '../images/play.png';
 import iconPause from '../images/pause.png';
 
-import { playbackTrack } from '../redux/actions/playerActions';
+import { playbackTrack, updatePlayback } from '../redux/actions/playerActions';
 
 class Player extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      trackId: this.props.track,
-    };
-  }
-
   _openNowPlaying() {
     this.props.navigation.navigate('SingleSongDetail', {
       onSelect: this.props.onSongPressed,
@@ -25,11 +18,13 @@ class Player extends PureComponent {
   }
 
   _togglePlayPause() {
-    // if (this.props.state == TrackPlayer.STATE_PAUSED) {
-    //   TrackPlayer.play();
-    // } else {
-    //   TrackPlayer.pause();
-    // }
+    if (this.props.state == TrackPlayer.STATE_PAUSED) {
+      TrackPlayer.play();
+      this.props.updatePlayback();
+    } else {
+      TrackPlayer.pause();
+      this.props.updatePlayback();
+    }
   }
 
   render() {
@@ -72,7 +67,6 @@ class Player extends PureComponent {
             />
           </TouchableOpacity>
         </View>
-        <View style={[{ width: 20 * 100 + '%' }, styles.bar]} />
       </View>
     );
   }
@@ -84,7 +78,7 @@ export default connect(
     track: state.musicPlaybackReducer.currentTrack,
     songs: state.musicPlaybackReducer.songs,
   }),
-  null
+  dispatch => bindActionCreators({ updatePlayback }, dispatch)
 )(Player);
 
 const styles = StyleSheet.create({

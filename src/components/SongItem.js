@@ -3,6 +3,9 @@ import { View, TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
 
 import TrackPlayer from 'react-native-track-player';
 
+import iconPlay from '../images/play.png';
+import iconPause from '../images/pause.png';
+
 const styles = StyleSheet.create({
   songContainer: {
     flexDirection: 'row',
@@ -10,17 +13,27 @@ const styles = StyleSheet.create({
   },
 
   songTitleText: {
-    fontSize: 16,
+    fontSize: 18,
     flexGrow: 1,
   },
 
   controlIcon: {
-    height: 20,
-    width: 20,
+    height: 40,
+    width: 40,
   },
 });
 
 class SongItem extends PureComponent {
+  _togglePlayPause() {
+    if (this.props.state == TrackPlayer.STATE_PAUSED) {
+      TrackPlayer.play();
+      this.props.updatePlayback();
+    } else {
+      TrackPlayer.pause();
+      this.props.updatePlayback();
+    }
+  }
+
   render() {
     const { song } = this.props;
     return (
@@ -32,10 +45,7 @@ class SongItem extends PureComponent {
             TrackPlayer.skip(String(song.id));
           }}
         >
-          <Image
-            style={styles.controlIcon}
-            source={require('../images/play.png')}
-          />
+          <Image style={styles.controlIcon} source={iconPlay} />
         </TouchableOpacity>
       </View>
     );
