@@ -29,12 +29,14 @@ class Player extends PureComponent {
 
   render() {
     const { songs, track } = this.props;
-    const currentSong = songs.find(item => item.id == track);
-    console.log('currentsong', currentSong);
 
+    const currentSong = songs
+      ? songs.find(item => item.id == track)
+      : undefined;
     if (!currentSong) {
       return null;
     }
+    console.log('currentsong', currentSong);
 
     return (
       <View style={styles.player}>

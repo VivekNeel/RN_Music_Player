@@ -13,6 +13,12 @@ import { Artists } from '../mockData';
 import SongItem from '../components/SongItem';
 import TrackPlayer from 'react-native-track-player';
 import AlbumListItem from '../components/AlbumListItem';
+import Player from '../components/Player';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { playbackTrack, updatePlayback } from '../redux/actions/playerActions';
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -26,6 +32,15 @@ const styles = StyleSheet.create({
 });
 
 class AlbumList extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.onSongPressed = this.onSongPressed.bind(this);
+  }
+
+  onSongPressed(currentSongID) {
+    this.props.playbackTrack(currentSongID);
+    this.props.updatePlayback();
+  }
   static navigationOptions = {
     title: `Doodleblue Music`,
   };
@@ -43,9 +58,16 @@ class AlbumList extends PureComponent {
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
         />
+
+        <Player
+          navigation={this.props.navigation}
+          onSongPressed={this.onSongPressed}
+        />
       </View>
     );
   }
 }
 
-export default AlbumList;
+export default connect(null, dispatch =>
+  bindActionCreators({ updatePlayback, playbackTrack }, dispatch)
+)(AlbumList);
