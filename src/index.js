@@ -1,6 +1,6 @@
-import AlbumList from '../src/components/AlbumList';
-import AlbumDetailView from '../src/components/AlbumDetailView';
-import SingleSongDetail from '../src/components/SingleSongDetail';
+import AlbumList from '../src/pages/AlbumList';
+import AlbumDetailView from '../src/pages/AlbumDetailView';
+import SingleSongDetail from '../src/pages/SingleSongDetail';
 
 import { StackNavigator } from 'react-navigation';
 

@@ -1,6 +1,5 @@
 import { AppRegistry } from 'react-native';
 import createApp from './App';
-import AlbumList from './src/components/AlbumList';
 import createEventHandler from './src/player/eventhandler';
 import TrackPlayer from 'react-native-track-player';
 
