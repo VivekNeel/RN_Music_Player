@@ -1,0 +1,8 @@
+export const UPDATE_LIBRARY = 'UPDATE_LIBRARY';
+export const LIBRARY_STATUS = 'LIBRARY_STATUS';
+
+export const PLAYBACK_INIT = 'PLAYBACK_INIT';
+export const PLAYBACK_STATE = 'PLAYBACK_STATE';
+export const PLAYBACK_TRACK = 'PLAYBACK_TRACK';
+
+export const NAVIGATE_TO = 'NAVIGATE_TO';
