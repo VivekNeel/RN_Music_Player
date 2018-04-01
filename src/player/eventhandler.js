@@ -1,10 +1,14 @@
 import { Alert } from 'react-native';
 import TrackPlayer from 'react-native-track-player';
 
-import { playbackState, playbackTrack } from '../redux/actions/playerActions';
+import {
+  playbackState,
+  playbackTrack,
+  updatePlayback,
+} from '../redux/actions/playerActions';
 
-async function eventHandler(data) {
-  switch (data) {
+async function eventHandler(store, data) {
+  switch (data.type) {
     case 'remote-play':
       TrackPlayer.play();
       break;
@@ -16,9 +20,13 @@ async function eventHandler(data) {
       break;
     case 'remote-next':
       TrackPlayer.skipToNext();
+      store.dispatch(updatePlayback());
+
       break;
     case 'remote-previous':
       TrackPlayer.skipToPrevious();
+      store.dispatch(updatePlayback());
+
       break;
     case 'remote-seek':
       TrackPlayer.seekTo(data.position);
@@ -30,17 +38,20 @@ async function eventHandler(data) {
 
     case 'playback-state':
       store.dispatch(playbackState(data.state));
+      store.dispatch(updatePlayback());
       break;
     case 'playback-track-changed':
-      store.dispatch(playbackTrack(data.nextTrack));
+      store.dispatch(playbackTrack(String(data.nextTrack)));
+      store.dispatch(updatePlayback());
+
       break;
     case 'playback-error':
-      Alert.alert('An error ocurred', data.error);
+      TrackPlayer.play();
 
       break;
 
     default:
-    // TrackPlayer.play();
+      TrackPlayer.play();
   }
 }
 
