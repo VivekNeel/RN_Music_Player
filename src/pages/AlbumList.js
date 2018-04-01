@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
+  StatusBar,
 } from 'react-native';
 
 import { Artists } from '../mockData';
@@ -14,6 +15,7 @@ import SongItem from '../components/SongItem';
 import TrackPlayer from 'react-native-track-player';
 import AlbumListItem from '../components/AlbumListItem';
 import Player from '../components/Player';
+import { COLOR_ACCENT, COLOR_ACCENT_DARK } from '../colors';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -43,6 +45,7 @@ class AlbumList extends PureComponent {
   }
   static navigationOptions = {
     title: `Doodleblue Music`,
+    headerStyle: { backgroundColor: COLOR_ACCENT },
   };
   renderItem = ({ item }) => {
     return <AlbumListItem navigation={this.props.navigation} item={item} />;
@@ -51,6 +54,10 @@ class AlbumList extends PureComponent {
   render() {
     return (
       <View style={styles.mainContainer}>
+        <StatusBar
+          backgroundColor={COLOR_ACCENT_DARK}
+          barStyle="light-content"
+        />
         <FlatList
           numColumns={2}
           style={styles.container}
