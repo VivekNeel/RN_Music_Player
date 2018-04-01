@@ -11,6 +11,8 @@ import TrackPlayer from 'react-native-track-player';
 import Player from '../components/Player';
 import SongItem from '../components/SongItem';
 
+import { loadSongs } from '../redux/actions/playerActions';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -35,10 +37,36 @@ class AlbumDetailView extends PureComponent {
     this.onSongPressed = this.onSongPressed.bind(this);
   }
 
-  onSongPressed(currentSong) {
-    console.log(currentSong);
+  async componentDidMount() {
+    this.props.loadSongs(this.props.navigation.state.params.albumSongs);
+    await TrackPlayer.setupPlayer().then(() => {
+      let tracks = [];
+      let track;
+      for (item of this.props.navigation.state.params.albumSongs) {
+        track = {
+          id: String(item.id),
 
-    this.props.playbackTrack(currentSong);
+          url: item.url,
+
+          title: item.title,
+          artist: item.album,
+          album: item.album,
+          genre: item.album,
+
+          artwork: item.albumImage,
+        };
+        tracks.push(track);
+      }
+
+      TrackPlayer.add(tracks).then(() => {
+        TrackPlayer.play();
+        TrackPlayer.skip(String(tracks[0].id));
+      });
+    });
+  }
+
+  onSongPressed(currentSongID) {
+    this.props.playbackTrack(currentSongID);
   }
   static navigationOptions = {
     title: '',
@@ -54,30 +82,39 @@ class AlbumDetailView extends PureComponent {
 
   keyExtractor = ({ id }) => String(id);
   render() {
-    const { albumSongs, coverImg } = this.props.navigation.state.params;
-    console.log(coverImg);
+    const { songs } = this.props;
+
+    if (!songs) {
+      return null;
+    }
 
     return (
       <View style={styles.container}>
         <Image
           style={styles.albumPoster}
           resizeMethod={'auto'}
-          source={{ uri: coverImg }}
+          source={{ uri: this.props.navigation.state.params.coverImg }}
         />
 
         <FlatList
-          data={albumSongs}
+          data={songs}
           keyExtractor={this.keyExtractor}
           renderItem={this.renderSong}
         />
 
-        <Player />
+        <Player
+          navigation={this.props.navigation}
+          onSongPressed={this.onSongPressed}
+        />
       </View>
     );
   }
 }
 
 export default connect(
-  state => ({ currentTrack: state.musicPlaybackReducer }),
-  dispatch => bindActionCreators({ playbackTrack }, dispatch)
+  state => ({
+    currentTrack: state.musicPlaybackReducer.currentTrack,
+    songs: state.musicPlaybackReducer.songs,
+  }),
+  dispatch => bindActionCreators({ playbackTrack, loadSongs }, dispatch)
 )(AlbumDetailView);
