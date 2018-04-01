@@ -3,6 +3,7 @@ import {
   PLAYBACK_INIT,
   PLAYBACK_STATE,
   PLAYBACK_TRACK,
+  UPDATE_LIBRARY,
 } from '../actionTypes';
 
 import TrackPlayer from 'react-native-track-player';
@@ -15,6 +16,13 @@ export function initializePlayback() {
     dispatch({
       type: PLAYBACK_INIT,
     });
+  };
+}
+
+export function loadSongs(songs) {
+  return {
+    type: UPDATE_LIBRARY,
+    songs: songs,
   };
 }
 export function playbackState(state) {

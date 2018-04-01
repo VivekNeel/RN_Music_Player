@@ -3,10 +3,17 @@ import {
   PLAYBACK_INIT,
   PLAYBACK_STATE,
   PLAYBACK_TRACK,
+  UPDATE_LIBRARY,
 } from '../actionTypes';
 
 const musicPlaybackReducer = (state = {}, action) => {
   switch (action.type) {
+    case UPDATE_LIBRARY: {
+      return {
+        ...state,
+        songs: action.songs,
+      };
+    }
     case PLAYBACK_INIT:
       return {
         ...state,
@@ -18,8 +25,6 @@ const musicPlaybackReducer = (state = {}, action) => {
         state: action.state,
       };
     case PLAYBACK_TRACK:
-      console.log(action.track);
-
       return {
         ...state,
         currentTrack: action.track,

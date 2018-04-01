@@ -11,7 +11,7 @@ const Artists = [
         url: 'http://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3',
         albumImage:
           'http://storage.googleapis.com/automotive-media/album_art.jpg',
-        id: 1,
+        id: 31,
         totalTrackCount: 6,
         duration: 103,
         site: 'https://www.youtube.com/audiolibrary/music',
@@ -24,7 +24,7 @@ const Artists = [
         url: 'http://storage.googleapis.com/automotive-media/The_Messenger.mp3',
         albumImage:
           'http://storage.googleapis.com/automotive-media/album_art.jpg',
-        id: 2,
+        id: 22,
         totalTrackCount: 6,
         duration: 132,
         site: 'https://www.youtube.com/audiolibrary/music',
@@ -34,10 +34,10 @@ const Artists = [
         album: 'Jazz & Blues',
         artist: 'Huma-Huma',
         genre: 'Jazz & Blues',
-        source: 'http://storage.googleapis.com/automotive-media/Talkies.mp3',
-        albumIimage:
+        url: 'http://storage.googleapis.com/automotive-media/Talkies.mp3',
+        albumImage:
           'http://storage.googleapis.com/automotive-media/album_art.jpg',
-        id: 3,
+        id: 33,
         totalTrackCount: 6,
         duration: 162,
         site: 'https://www.youtube.com/audiolibrary/music',
@@ -50,7 +50,7 @@ const Artists = [
         url: 'http://storage.googleapis.com/automotive-media/On_the_Bach.mp3',
         albumImage:
           'http://storage.googleapis.com/automotive-media/album_art.jpg',
-        id: 4,
+        id: 64,
         totalTrackCount: 6,
         duration: 66,
         site: 'https://www.youtube.com/audiolibrary/music',
@@ -64,7 +64,7 @@ const Artists = [
           'http://storage.googleapis.com/automotive-media/The_Story_Unfolds.mp3',
         albumImage:
           'http://storage.googleapis.com/automotive-media/album_art.jpg',
-        id: 5,
+        id: 85,
         totalTrackCount: 6,
         duration: 91,
         site: 'https://www.youtube.com/audiolibrary/music',
