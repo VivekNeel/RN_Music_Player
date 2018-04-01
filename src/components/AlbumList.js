@@ -10,6 +10,7 @@ import {
 
 import { Artists } from '../mockData';
 import SongItem from '../components/SongItem';
+import TrackPlayer from 'react-native-track-player';
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -26,22 +27,32 @@ const styles = StyleSheet.create({
     width: 150,
   },
 });
+const mapTracksForPlayer = tracks => {
+  console.log(tracks);
 
+  return tracks.map(track => ({
+    id: track.id,
+    url: track.url,
+    title: track.title,
+    artist: 'Phish',
+    album: track.album,
+    genre: 'Phish',
+    artwork: 'https://s3.amazonaws.com/hose/images/' + track.id + '.jpg',
+  }));
+};
 class AlbumList extends PureComponent {
   static navigationOptions = {
     title: `Albums`,
   };
   renderItem = ({ item }) => {
-    console.log(item);
-
     return (
       <TouchableOpacity
-        onPress={() =>
+        onPress={async () => {
           this.props.navigation.navigate('DetailAlbumList', {
             albumSongs: item.songs,
             coverImg: item.background,
-          })
-        }
+          });
+        }}
       >
         <View style={{ flexGrow: 1, flexDirection: 'column', margin: 10 }}>
           <Image
