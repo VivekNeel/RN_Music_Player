@@ -9,14 +9,19 @@ import {
 } from 'react-native';
 
 import { Artists } from '../mockData';
+import SongItem from '../components/SongItem';
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
   container: {
     flexGrow: 1,
   },
 
   albumPoster: {
-    flexGrow: 1,
     height: 150,
     width: 150,
   },
@@ -34,6 +39,7 @@ class AlbumList extends PureComponent {
         onPress={() =>
           this.props.navigation.navigate('DetailAlbumList', {
             albumSongs: item.songs,
+            coverImg: item.background,
           })
         }
       >
@@ -41,7 +47,7 @@ class AlbumList extends PureComponent {
           <Image
             style={styles.albumPoster}
             resizeMethod={'auto'}
-            source={require('../images/album.jpg')}
+            source={{ uri: item.background }}
           />
           <Text>{item.name}</Text>
         </View>
@@ -50,16 +56,16 @@ class AlbumList extends PureComponent {
   };
   keyExtractor = ({ name }) => name;
   render() {
-    console.log(this.props);
-
     return (
-      <FlatList
-        numColumns={2}
-        style={styles.container}
-        data={Artists}
-        renderItem={this.renderItem}
-        keyExtractor={this.keyExtractor}
-      />
+      <View style={styles.mainContainer}>
+        <FlatList
+          numColumns={2}
+          style={styles.container}
+          data={Artists}
+          renderItem={this.renderItem}
+          keyExtractor={this.keyExtractor}
+        />
+      </View>
     );
   }
 }
